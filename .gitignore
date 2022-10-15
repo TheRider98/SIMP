@@ -1,0 +1,4 @@
+node_modules
+config.js
+.env
+routes/routes.rest
