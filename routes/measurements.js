@@ -1,7 +1,7 @@
 const express = require("express");
 var app = express();
 const router = express.Router();
-const measurements = require("../models/measurements");
+const measurements = require("../models/Measurements.js");
 const { validatePostInput } = require("../util/post_valid");
 const jwtCheck = require("../util/check-auth");
 
