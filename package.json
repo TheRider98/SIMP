@@ -9,7 +9,7 @@
     "client": "cd frontend\\react-auth && npm start",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start": "node server.js",
-    "heroku-postbuild": "npm install && npm install --prefix frontend\react-auth --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "npm install && npm install --prefix frontend\\react-auth --only=dev --no-shrinkwrap && npm run build"
   },
   "keywords": [],
   "author": "Austin R, Weiyi Chen",
