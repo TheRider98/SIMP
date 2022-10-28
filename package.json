@@ -8,7 +8,7 @@
     "server": "nodemon server.js",
     "client": "cd frontend\\react-auth && npm start",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "heroku-postbuild": "cd frontend && cd react-auth && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "keywords": [],
