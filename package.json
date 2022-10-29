@@ -35,6 +35,7 @@
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "react-bootstrap": "^2.5.0",
+    "serve": "^14.0.1",
     "socket.io": "^4.5.3",
     "supports-color": "^9.2.3"
   },
