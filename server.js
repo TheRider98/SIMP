@@ -45,10 +45,10 @@ app.use("/measurements", measurementsRouter);
 
 // for production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("frontend/build"));
+  app.use(express.static("frontend/react-auth/build"));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "frontend/react-auth", "build", "index.html"));
   });
 }
 /*
