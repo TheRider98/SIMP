@@ -10,7 +10,7 @@ const jwt = require("jsonwebtoken");
 
 
 // db uri, mongodb connection string
-const uri = "mongodb+srv://Simpadmin:Simpy11@cluster0.p96hcct.mongodb.net/test";
+const uri = process.env.MONGODB_URI;
 //process.env.MONGODB_URI;
 
 const app = express();
