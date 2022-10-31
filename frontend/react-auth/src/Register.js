@@ -1,7 +1,7 @@
 import React, { useState }  from 'react';
 import { Form, Button } from "react-bootstrap";
+import './css/login.scss';
 import axios from "axios";
-
 
 
 export default function Register() {
@@ -40,34 +40,38 @@ export default function Register() {
 
     return (
         <>
-        <h2>Register</h2>
-        {/* email */}
         <Form onSubmit={(e)=>handleSubmit(e)}>
+        <h2>Register</h2>
+
         {/* email */}
+        <div class="textBoxdiv">
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email"
+            placeholder="Email"
           />
         </Form.Group>
+        </div>
+        
         {/* username */}
-        <Form.Group controlId="formBasicUsername">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username"
-          />
-        </Form.Group>
+        <div class="textBoxdiv">
+          <Form.Group controlId="formBasicUsername">
+            <Form.Control
+              type="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
+            />
+          </Form.Group>
+        </div>
+
         {/* password */}
+        <div class="textBoxdiv">
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
             name="password"
@@ -76,6 +80,7 @@ export default function Register() {
             placeholder="Password"
           />
         </Form.Group>
+        </div>
 
         {/* submit button */}
         <Button

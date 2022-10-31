@@ -12,7 +12,8 @@ const auth = require("./auth");
 
 
 // db uri, mongodb connection string
-const uri = process.env.MONGODB_URI;
+const uri = "mongodb+srv://Simpadmin:Simpy11@cluster0.p96hcct.mongodb.net/simpdb?retryWrites=true&w=majority";
+//const uri = process.env.MONGODB_URI;
 //process.env.MONGODB_URI;
 
 const app = express();
@@ -200,7 +201,7 @@ app.get("/auth-endpoint", auth, (request, response) => {
 
 
 // create port
-const port = process.env.PORT// || 5000;
+const port = process.env.PORT || 5000;
 
 const server = app.listen(port, () =>
   console.log(`Server running on port ${port}`)

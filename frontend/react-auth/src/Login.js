@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import './css/login.scss';
+import Register from "./Register";
+
 const cookies = new Cookies();
+
 
 
 export default function Login() {
@@ -44,47 +48,54 @@ export default function Login() {
   
     return (
       <>
-        <h2>Login</h2>
         <Form onSubmit={(e) => handleSubmit(e)}>
-          {/* email */}
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter email"
-            />
-          </Form.Group>
-  
-          {/* password */}
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-            />
-          </Form.Group>
-  
-          {/* submit button */}
-          <Button
-            variant="primary"
-            type="submit"
-            onClick={(e) => handleSubmit(e)}
-          >
-            Login
-          </Button>
-  
-          {/* display success message */}
-          {login ? (
-            <p className="text-success">You Are Logged in Successfully</p>
-          ) : (
-            <p className="text-danger">You Are Not Logged in</p>
-          )}
+          <h1>SIMP</h1>
+          <h2>Login</h2>
+            {/* email */}
+            <Form.Group controlId="formBasicEmail">
+              <div class="textBoxdiv">
+                <Form.Control
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                  />
+              </div>
+
+            </Form.Group>
+    
+            {/* password */}
+            <Form.Group controlId="formBasicPassword">
+            <div class="textBoxdiv">
+                <Form.Control
+                type="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+              />
+            </div>
+            </Form.Group>
+    
+            {/* submit button */}
+            <div class="loginBtn">
+              <Button
+                variant="primary"
+                type="submit"
+                onClick={(e) => handleSubmit(e)}
+              >
+                Login
+              </Button>
+            </div>
+
+            <div class="signup">
+              Don't have an account?
+              <br></br>
+              <a href="/reg">Register Here</a>
+            </div>
+
+
         </Form>
       </>
     );
