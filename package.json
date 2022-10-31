@@ -21,6 +21,7 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^5.2.2",
     "chart.js": "^3.8.0",
+    "cookies": "^0.8.0",
     "cors": "^2.8.5",
     "expo-auth-session": "^3.2.3",
     "express": "^4.17.1",
@@ -35,9 +36,12 @@
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "react-bootstrap": "^2.5.0",
-    "serve": "^14.0.1",
+    "react-router-dom": "^6.4.2",
+    "serve": "^6.5.8",
     "socket.io": "^4.5.3",
-    "supports-color": "^9.2.3"
+    "supports-color": "^9.2.3",
+    "switch": "^0.0.0",
+    "universal-cookie": "^4.0.4"
   },
   "engines": {
     "node": "15.x"

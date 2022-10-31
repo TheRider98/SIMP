@@ -6,11 +6,14 @@ const path = require("path");
 const passport = require("passport");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const auth = require("./auth");
+
 
 
 
 // db uri, mongodb connection string
-const uri = process.env.MONGODB_URI;
+const uri = "mongodb+srv://Simpadmin:Simpy11@cluster0.p96hcct.mongodb.net/simpdb?retryWrites=true&w=majority";
+//const uri = process.env.MONGODB_URI;
 //process.env.MONGODB_URI;
 
 const app = express();
@@ -27,6 +30,20 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB Connected");
+});
+
+// Curb Cores Error by adding a header here
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+  );
+  next();
 });
 
 // app.get("/", (req, res) => {
@@ -170,19 +187,20 @@ app.post("/login", (request, response) => {
     });
 });
 
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
+// free endpoint
+app.get("/free-endpoint", (request, response) => {
+  response.json({ message: "You are free to access me anytime" });
 });
-app.post('/api/world', (req, res) => {
-  console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
-  );
+
+// authentication endpoint
+app.get("/auth-endpoint", auth, (request, response) => {
+  response.json({ message: "You are authorized to access me" });
 });
+
 
 
 // create port
-const port = process.env.PORT; //|| 5000;
+const port = process.env.PORT || 5000;
 
 const server = app.listen(port, () =>
   console.log(`Server running on port ${port}`)
@@ -205,15 +223,3 @@ app.use(function (req, res, next) {
   req.io = io;
   next();
 });
-
-/*
-// free endpoint
-app.get("/free-endpoint", (request, response) => {
-  response.json({ message: "You are free to access me anytime" });
-});
-
-// authentication endpoint
-app.get("/auth-endpoint", (request, response) => {
-  response.json({ message: "You are authorized to access me" });
-});
-*/

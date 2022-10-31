@@ -1,91 +1,38 @@
 import { Container, Col, Row } from "react-bootstrap";
-import Register from "./Register";
-import Login  from "./Login";
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Routes, Route } from "react-router-dom";
+import React, { Component }  from 'react';
 import './App.css';
+import Account from "./Account";
+import FreeComponent from "./FreeComponent";
+import AuthComponent from "./AuthComponent";
+import ProtectedRoutes from "./ProtectedRoutes";
 
-/*
+
+
 function App() {
   return (
     <Container>
       <Row>
-        <Col xs={12} sm={12} md={6} lg={6}>
-          <Register />
-        </Col>
+        <Col className="text-center">
+          <h1>SIMP</h1>
+          <h2>Smart Interior Monitoring Plug</h2>
 
-        <Col xs={12} sm={12} md={6} lg={6}>
-          <Login />
+          <section id="navigation">
+            {/* <a href="/">Home</a> */}
+            {/* <a href="/free">Free Component</a> */}
+            {/* <a href="/auth">Auth Component</a> */}
+          </section>
         </Col>
       </Row>
+
+      <Routes>
+        <Route exact path="/" element={<Account />} />
+        <Route exact path="/free" element={<FreeComponent />} />
+        <Route exact path="/auth" element={<AuthComponent />} />
+  
+      </Routes>
     </Container>
   );
-}
-*/
-
-class App extends Component {
-  state = {
-    response: '',
-    post: '',
-    responseToPost: '',
-  };
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    return body;
-  };
-  handleSubmit = async e => {
-    e.preventDefault();
-    const response = await fetch('/api/world', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ post: this.state.post }),
-    });
-    const body = await response.text();
-    this.setState({ responseToPost: body });
-  };
-  
-render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <p>{this.state.response}</p>
-        <form onSubmit={this.handleSubmit}>
-          <p>
-            <strong>Post to Server:</strong>
-          </p>
-          <input
-            type="text"
-            value={this.state.post}
-            onChange={e => this.setState({ post: e.target.value })}
-          />
-          <button type="submit">Submit</button>
-        </form>
-        <p>{this.state.responseToPost}</p>
-      </div>
-    );
-  }
 }
 
 
