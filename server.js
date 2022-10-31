@@ -186,6 +186,7 @@ app.post("/login", (request, response) => {
     });
 });
 
+
 // free endpoint
 app.get("/free-endpoint", (request, response) => {
   response.json({ message: "You are free to access me anytime" });
@@ -199,7 +200,7 @@ app.get("/auth-endpoint", auth, (request, response) => {
 
 
 // create port
-const port = process.env.PORT //|| 5000;
+const port = process.env.PORT// || 5000;
 
 const server = app.listen(port, () =>
   console.log(`Server running on port ${port}`)

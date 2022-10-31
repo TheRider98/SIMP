@@ -1,7 +1,7 @@
 import { Container, Col, Row } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import React, { Component }  from 'react';
-import './App.css';
+import './css/App.css';
 import Account from "./Account";
 import FreeComponent from "./FreeComponent";
 import AuthComponent from "./AuthComponent";
