@@ -1,10 +1,9 @@
 import React, { useState }  from 'react';
 import { Form, Button } from "react-bootstrap";
-import './css/login.scss';
 import axios from "axios";
 
 
-export default function Register() {
+export default function Dashboard() {
 
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
@@ -19,7 +18,7 @@ export default function Register() {
         // set configurations
         const configuration = {
           method: "post",
-          url: "https://simplug.herokuapp.com/register",
+          url: "https://simplug.herokuapp.com/dashboard",
           data: {
             email,
             username,

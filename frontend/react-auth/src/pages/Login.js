@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import './css/login.scss';
-import Register from "./Register";
+import '../css/login.scss';
 
 const cookies = new Cookies();
 
