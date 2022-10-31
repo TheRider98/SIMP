@@ -1,0 +1,7 @@
+.h1, h1_d {
+    margin: 0;
+    color: black;
+    font-size: 76px !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
