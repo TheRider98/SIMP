@@ -1,7 +1,70 @@
 .h1, h1_d {
     margin: 0;
-    color: black;
-    font-size: 76px !important;
+    color: white;
+    font-size: 86px !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     align-items: flex-start !important;
     justify-content: flex-start !important;
+}
+
+.h2, h2_d {
+    margin: 0;
+    color: white;
+    position: absolute;
+    font-size: 76px !important;
+    font-family: Arial, sans-serif;
+    right: 20px;
+}
+
+.h3, h3_d {
+    margin: 0;
+    color: white;
+    font-size: 40px !important;
+    text-decoration: underline;
+    align-items: flex-start !important;
+    font-family: Arial, sans-serif;
+
+    justify-content: flex-start !important;
+}
+
+.title {
+    text-align: center;
+  }
+  
+  .form {
+    border: solid black 1px;
+  }
+  
+  .elem {
+    overflow: hidden;
+    display: inline-block;
+    width: 150px;
+    height: 20px;
+  }
+  
+  .charts {
+    text-align: center;
+  }
+  
+  .chart {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 9%;
+    padding-right: 2%;
+    clear: both;
+    margin: 5px;
+  }
+
+button, buttonD{
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background:  linear-gradient(#f12711, #f5af19);
+    background-size: 200%;
+    margin-top: 5% !important;
+    color: black !important;
+    font-size: 16px;
+    font-weight: bold !important;
 }

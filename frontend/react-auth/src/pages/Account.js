@@ -2,7 +2,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import Login from "./Login";
-import '../css/login.scss';
+import '../css/login.css';
 
 
 export default function Account() {

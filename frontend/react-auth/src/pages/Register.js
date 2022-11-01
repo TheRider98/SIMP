@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
 import { Form, Button } from "react-bootstrap";
-import '../css/login.scss';
+import '../css/login.css';
 import axios from "axios";
 
 
@@ -94,9 +94,9 @@ export default function Register() {
                   
         {/*display success message*/}
         {register ? (
-          <p className="text-success">You Are Registered Successfully</p>
+          <p className="text-success">An Email has been Sent!</p>
         ) : (
-          <p className="text-danger">You Are Not Registered</p>
+          <p className="text-danger"></p>
         )}
         
         </Form>

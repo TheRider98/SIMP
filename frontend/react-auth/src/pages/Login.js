@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import '../css/login.scss';
+import '../css/login.css';
 
 const cookies = new Cookies();
 
@@ -36,7 +36,7 @@ export default function Login() {
             path: "/",
           });
           // redirect user to the auth page
-          window.location.href = "/auth";
+          window.location.href = "/dashboard";
   
           setLogin(true);
         })
@@ -49,7 +49,6 @@ export default function Login() {
       <>
         <Form onSubmit={(e) => handleSubmit(e)}>
           <h1>SIMP</h1>
-          <h2>Login</h2>
             {/* email */}
             <Form.Group controlId="formBasicEmail">
               <div class="textBoxdiv">
