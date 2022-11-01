@@ -19,7 +19,7 @@ router.get("/get", async (req, res) => {
 router.get("/getA/:num", async (req, res) => {
   try {
     var num = req.params.num.replace(":", "");
-    const measurementsMessages = await measurements.find().limit(parseInt(num));
+    const measurementsMessages = await measurements.find().sort({timestamp: -1}).limit(parseInt(num));
     res.status(200).json(measurementsMessages);
   } catch (error) {
     res.status(404).json({ message: error.message });
