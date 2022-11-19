@@ -42,9 +42,12 @@ export default function Dashboard() {
 
     return (
       <>
-        <h1_d>SIMP</h1_d>
-        <h2_d>YTD: $_____ /_____ kW</h2_d><br/>
-        <h3_d>Devices:____</h3_d>
+        <div>
+          <h1_d>SIMP</h1_d>
+          <h2_d>YTD: $_____ /_____ kW</h2_d><br/>
+        </div>
+
+        <h3_d>Devices:     </h3_d>
 
         {/* submit button */}
         <div class="buttonD">
