@@ -20,6 +20,20 @@ router.get("/getA/:num", async (req, res) => {
   try {
     var num = req.params.num.replace(":", "");
     const measurementsMessages = await measurements.find().sort({timestamp: -1}).limit(parseInt(num));
+    var exportMeasurments = {
+      "exportMeas" : measurementsMessages
+    }
+    res.status(200).json(exportMeasurments);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+});
+
+// get specific amount of points
+router.get("/getB/:num", async (req, res) => {
+  try {
+    var num = req.params.num.replace(":", "");
+    const measurementsMessages = await measurements.find().sort({timestamp: -1}).limit(parseInt(num));
     res.status(200).json(measurementsMessages);
   } catch (error) {
     res.status(404).json({ message: error.message });
