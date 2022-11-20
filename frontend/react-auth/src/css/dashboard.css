@@ -3,69 +3,66 @@ html {
   position: relative;
 }
 
+
+
+
 .h1, h1_d {
   display: inline-block;
-  margin: 0;
-  padding-top: 1%;
+  left: 10%;
   color: white;
-  font-size: 86px !important;
+  font-size: 5em;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
+  background-color: aqua;
 }
 
 .h2, h2_d {
   display: inline-block;
-  margin: 0;
-  padding-top: 1%;
-  padding-right: 1%;
-  margin-left: 10px;
   color: white;
   position: fixed;
-  font-size: 76px !important;
+  font-size: 5em;
   font-family: Arial, sans-serif;
-  right: 20px;
+  right: 1%;
+  background-color: black;
 }
 
 .h3, h3_d {
   display: inline-block;
-  margin: 0;
   color: white;
-  padding-top: 15%;
+  margin-top: 15%;
   font-size: 40px !important;
   align-items: flex-start !important;
   font-family: Arial, sans-serif;
   justify-content: flex-start !important;
+  background-color: antiquewhite;
 }
 
 .title {
     text-align: center;
   }
   
-  .form {
-    border: solid black 1px;
-  }
-  
-  .elem {
-    overflow: hidden;
-    display: inline-block;
-    width: 150px;
-    height: 20px;
-  }
-  
-  .charts {
-    text-align: center;
-  }
-  
-  .chart {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding-top: 15%;
-    padding-right: 2%;
-    clear: both;
-    margin: 5px;
-  }
+.form {
+  border: solid black 1px;
+}
+
+.elem {
+  overflow: hidden;
+  display: inline-block;
+  width: 150px;
+  height: 20px;
+}
+
+.charts {
+  text-align: center;
+}
+
+.chart {
+  position: fixed;
+  margin-top: 7%;
+  margin-right: 1%;
+  right: 0;
+  top: 0;
+  background-color: blue;
+}
 
 button, buttonD{
     height: 45px;
@@ -78,6 +75,5 @@ button, buttonD{
     color: black !important;
     font-size: 16px;
     font-weight: bold !important;
+    background-color: rgb(127, 157, 255);
 }
-
-
