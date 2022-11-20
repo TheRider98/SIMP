@@ -12,7 +12,6 @@ html {
   color: white;
   font-size: 5em;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: aqua;
 }
 
 .h2, h2_d {
@@ -22,7 +21,6 @@ html {
   font-size: 5em;
   font-family: Arial, sans-serif;
   right: 1%;
-  background-color: black;
 }
 
 .h3, h3_d {
@@ -33,7 +31,6 @@ html {
   align-items: flex-start !important;
   font-family: Arial, sans-serif;
   justify-content: flex-start !important;
-  background-color: antiquewhite;
 }
 
 .title {
