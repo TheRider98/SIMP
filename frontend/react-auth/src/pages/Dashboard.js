@@ -4,6 +4,7 @@ import { Col, Row } from "react-bootstrap";
 import axios from "axios";
 import '../css/dashboard.css';
 import Chart from './Chart';
+//import {  } from '../../../routes/measurements'
 
 
 export default function Dashboard() {
@@ -13,6 +14,32 @@ export default function Dashboard() {
   const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
   const [time, setTime] = useState({});
+  let measurements = [];
+  let cost = 0,
+      count = 0;
+
+
+  //API Call for 1Hour of Measurements
+  //Assign Value to "measurements" Array and add parameter 
+  const res = axios.get('https://simplug.herokuapp.com/measurements/getA/:720')
+    .then((result) => { 
+      measurements = result.data.exportMeas;
+      count = measurements.length - 1;
+      while (count > 0) {
+        //Average electricity rate in Florida of 14.51 ¢/kWh
+        // Cost = Power * (NationalAverage / kWh)
+        var a = parseFloat(measurements[count].power);
+        cost += (a / 1000) * (.1451/720);
+        count--;
+      }
+      console.log(cost);
+      //console.log(result.data.exportMeas)
+    }).catch(err => {
+      console.log(err);
+  });
+  
+
+
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
