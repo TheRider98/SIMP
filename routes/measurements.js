@@ -33,7 +33,7 @@ router.get("/getA/:num", async (req, res) => {
 router.get("/getB/:num", async (req, res) => {
   try {
     var num = req.params.num.replace(":", "");
-    const measurementsMessages = await measurements.find().sort({timestamp: -1}).skip(num).limit(parseInt(num));
+    const measurementsMessages = await measurements.find().sort({timestamp: -1}).skip(parseInt(num)).limit(parseInt(num));
     var exportMeasurments = {
       "exportMeas" : measurementsMessages
     }
