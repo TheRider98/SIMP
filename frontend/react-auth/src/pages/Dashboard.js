@@ -13,31 +13,36 @@ export default function Dashboard() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
+  const [measArr, setMeasArr] = useState([]);
+  const [kwArr, setkwArr] = useState([]);
   const [time, setTime] = useState({});
+
   let measurements = [];
-  let cost = 0,
-      count = 0;
+  let a = 0, cost = 0, wattage = 0, count = 0;
 
 
-  //API Call for 1Hour of Measurements
+  //API Call for 1Day of Measurements
   //Assign Value to "measurements" Array and add parameter 
-  const res = axios.get('https://simplug.herokuapp.com/measurements/getA/:720')
+  const res = axios.get('https://simplug.herokuapp.com/measurements/getA/:17280')
     .then((result) => { 
       measurements = result.data.exportMeas;
       count = measurements.length - 1;
       while (count > 0) {
         //Average electricity rate in Florida of 14.51 ¢/kWh
         // Cost = Power * (NationalAverage / kWh)
-        var a = parseFloat(measurements[count].power);
-        cost += (a / 1000) * (.1451/720);
+        a = parseFloat(measurements[count].power);
+        cost += (a / 1000) * (.1451 / 720);
+        wattage += (a / 1000)  / (720);
         count--;
       }
+      setMeasArr(cost.toFixed(2));
+      setkwArr(wattage.toFixed(3));
       console.log(cost);
-      //console.log(result.data.exportMeas)
     }).catch(err => {
       console.log(err);
   });
-  
+
+
 
 
 
@@ -71,8 +76,7 @@ export default function Dashboard() {
 return (
   <>
   <h1_d>SIMP</h1_d>
-  <h2_d>YTD: $_____ /_____ kW</h2_d><br/>
-
+  <h2_d>Today: ${measArr} / {kwArr} kW</h2_d><br></br>
   <h3_d>Devices:</h3_d>
   <h3_d>_____________</h3_d>
   <Row>
