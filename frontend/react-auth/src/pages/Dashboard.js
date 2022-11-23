@@ -32,7 +32,7 @@ export default function Dashboard() {
         // Cost = Power * (NationalAverage / kWh)
         a = parseFloat(measurements[count].power);
         cost += (a / 1000) * (.1451 / 720);
-        wattage += (a / 1000)  / (720);
+        wattage += (a / 1000) / (720);
         count--;
       }
       setMeasArr(cost.toFixed(2));
@@ -141,9 +141,11 @@ return (
     </Button>
   </div>
 
+
   <div className="charts">
     <Chart height={'600px'} width={'1000px'} filter={time} chartId={'62cb876f-ebb5-4cd8-8b90-32e9b590945c'}/>
   </div>
+
   </>
 
 )}
