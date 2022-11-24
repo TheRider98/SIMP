@@ -44,7 +44,7 @@ export default function Register() {
         <h2>Register</h2>
 
         {/* email */}
-        <div class="textBoxdiv">
+        <div className="textBoxdiv">
         <Form.Group controlId="formBasicEmail">
           <Form.Control
             type="email"
@@ -57,7 +57,7 @@ export default function Register() {
         </div>
         
         {/* username */}
-        <div class="textBoxdiv">
+        <div className="textBoxdiv">
           <Form.Group controlId="formBasicUsername">
             <Form.Control
               type="username"
@@ -70,7 +70,7 @@ export default function Register() {
         </div>
 
         {/* password */}
-        <div class="textBoxdiv">
+        <div className="textBoxdiv">
         <Form.Group controlId="formBasicPassword">
           <Form.Control
             type="password"

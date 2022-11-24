@@ -3,10 +3,38 @@ html {
   position: relative;
 }
 
+.very-specific-design {
+  width: 600px;
+  height: 400px;
+  padding: 50px;
+  text-align: center;
+  background: white;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.scaleable-wrapper {
+  padding: 20px;
+  resize: both;
+  position: relative;
+  background: #666;
+  height: 400px;
+}
+
+.ui-resizable-se {
+  width: 10px;
+  height: 10px;
+  background: orange;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 
 
-
-.h1, h1_d {
+.H1 {
   display: inline-block;
   left: 10%;
   color: white;
@@ -14,7 +42,7 @@ html {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.h2, h2_d {
+.H2 {
   display: inline-block;
   color: white;
   position: fixed;
@@ -23,7 +51,7 @@ html {
   right: 1%;
 }
 
-.h3, h3_d {
+.H3 {
   display: inline-block;
   color: white;
   margin-top: 15%;

@@ -1,10 +1,13 @@
 import React, { useState }  from 'react';
+import ReactDOM from 'react-dom'
 import { Form, Button, Container } from "react-bootstrap";
 import { Col, Row } from "react-bootstrap";
 import axios from "axios";
 import '../css/dashboard.css';
 import Chart from './Chart';
 //import {  } from '../../../routes/measurements'
+
+
 
 
 export default function Dashboard() {
@@ -19,7 +22,6 @@ export default function Dashboard() {
 
   let measurements = [];
   let a = 0, cost = 0, wattage = 0, count = 0;
-
 
   //API Call for 1Day of Measurements
   //Assign Value to "measurements" Array and add parameter 
@@ -75,14 +77,14 @@ export default function Dashboard() {
 
 return (
   <>
-  <h1_d>SIMP</h1_d>
-  <h2_d>Today: ${measArr} / {kwArr} kW</h2_d><br></br>
-  <h3_d>Devices:</h3_d>
-  <h3_d>_____________</h3_d>
+  <p className = "H1">SIMP</p>
+  <p className = "H2">Today: ${measArr} / {kwArr} kW</p><br></br>
+  <p className = "H3">Devices:</p>
+  <p className = "H3">_____________</p>
   <Row>
     <Col>
       {/* submit button */}
-      <div class="buttonD">
+      <div className="buttonD">
         <Button
           variant="primary"
           type="submit"
@@ -93,7 +95,7 @@ return (
       </div>
 
       {/* submit button */}
-      <div class="buttonD">
+      <div className="buttonD">
         <Button
           variant="primary"
           type="submit"
@@ -106,7 +108,7 @@ return (
 
     <Col>
       {/* submit button */}
-      <div class="buttonD">
+      <div className="buttonD">
         <Button
           variant="primary"
           type="submit"
@@ -117,7 +119,7 @@ return (
       </div>
 
       {/* submit button */}
-      <div class="buttonD">
+      <div className="buttonD">
         <Button
           variant="primary"
           type="submit"
@@ -131,7 +133,8 @@ return (
 
 
   {/* submit button */}
-  <div class="buttonD">
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <div className="buttonD">
     <Button
       variant="primary"
       type="submit"
@@ -145,7 +148,6 @@ return (
   <div className="charts">
     <Chart height={'600px'} width={'1000px'} filter={time} chartId={'62cb876f-ebb5-4cd8-8b90-32e9b590945c'}/>
   </div>
-
   </>
 
 )}

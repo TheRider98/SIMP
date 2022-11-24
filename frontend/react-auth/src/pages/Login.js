@@ -51,7 +51,7 @@ export default function Login() {
           <h1>SIMP</h1>
             {/* email */}
             <Form.Group controlId="formBasicEmail">
-              <div class="textBoxdiv">
+              <div className="textBoxdiv">
                 <Form.Control
                     type="email"
                     name="email"
@@ -65,7 +65,7 @@ export default function Login() {
     
             {/* password */}
             <Form.Group controlId="formBasicPassword">
-            <div class="textBoxdiv">
+            <div className="textBoxdiv">
                 <Form.Control
                 type="password"
                 name="password"
@@ -77,7 +77,7 @@ export default function Login() {
             </Form.Group>
     
             {/* submit button */}
-            <div class="loginBtn">
+            <div className="loginBtn">
               <Button
                 variant="primary"
                 type="submit"
@@ -87,7 +87,7 @@ export default function Login() {
               </Button>
             </div>
 
-            <div class="signup">
+            <div className="signup">
               Don't have an account?
               <br></br>
               <a href="/reg">Register Here</a>
