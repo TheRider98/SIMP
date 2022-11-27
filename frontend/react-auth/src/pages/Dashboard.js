@@ -1,4 +1,5 @@
 import React, { useState }  from 'react';
+import { Link, redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom'
 import { Form, Button, Container } from "react-bootstrap";
 import { Col, Row } from "react-bootstrap";
@@ -46,8 +47,6 @@ export default function Dashboard() {
 
 
 
-
-
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
@@ -75,6 +74,20 @@ export default function Dashboard() {
   };
 
 
+
+
+
+  const nextPage  = (e) => {
+    // redirect to devices web-page
+    function redirectDevices() {
+      window.location.href="/device";  
+    }
+
+    redirectDevices();
+  };
+
+
+
 return (
   <>
   <p className = "H1">SIMP</p>
@@ -83,23 +96,26 @@ return (
   <p className = "H3">_____________</p>
   <Row>
     <Col>
-      {/* submit button */}
+    
+      {/* submit button*/} 
       <div className="buttonD">
         <Button
           variant="primary"
           type="submit"
-          onClick={(e) => handleSubmit(e)}
+          onClick={(e) => nextPage(e)}
         >
           Kitchen
         </Button>
       </div>
+       
+
 
       {/* submit button */}
       <div className="buttonD">
         <Button
           variant="primary"
           type="submit"
-          onClick={(e) => handleSubmit(e)}
+          onClick={(e) => nextPage(e)}
         >
           Living Room 1
         </Button>
@@ -112,7 +128,7 @@ return (
         <Button
           variant="primary"
           type="submit"
-          onClick={(e) => handleSubmit(e)}
+          onClick={(e) => nextPage(e)}
         >
           Living Room 2
         </Button>
@@ -123,7 +139,7 @@ return (
         <Button
           variant="primary"
           type="submit"
-          onClick={(e) => handleSubmit(e)}
+          onClick={(e) => nextPage(e)}
         >
           Master Bedroom
         </Button>
