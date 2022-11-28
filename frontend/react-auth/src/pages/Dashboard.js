@@ -26,7 +26,7 @@ export default function Dashboard() {
 
   //API Call for 1Day of Measurements
   //Assign Value to "measurements" Array and add parameter 
-  const res = axios.get('https://simplug.herokuapp.com/measurements/getA/:17280')
+  const res = axios.get('https://simplug.herokuapp.com/measurements/getA/:2880')
     .then((result) => { 
       measurements = result.data.exportMeas;
       count = measurements.length - 1;

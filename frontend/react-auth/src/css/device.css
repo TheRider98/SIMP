@@ -61,6 +61,16 @@ html {
   justify-content: flex-start !important;
 }
 
+.Graph {
+  display: inline-block;
+  color: white;
+  position: fixed;
+  font-size: 5em;
+  font-family: Arial, sans-serif;
+  right: 1%;
+  top: 15%;
+}
+
 .title {
     text-align: center;
   }
@@ -69,13 +79,18 @@ html {
   border: solid black 1px;
 }
 
+
+canvas {
+  width: 1000px;
+}
+
 .elem {
   overflow: hidden;
   display: inline-block;
   width: 150px;
   height: 20px;
 }
-
+/*
 .charts {
   text-align: center;
 }
@@ -88,7 +103,7 @@ html {
   top: 0;
   background-color: blue;
 }
-
+*/
 body {
   padding: 2em;
 }
