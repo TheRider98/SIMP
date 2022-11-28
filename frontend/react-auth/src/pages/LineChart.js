@@ -16,7 +16,7 @@ export default function LineChart () {
 
         // useEffect automatically executes once the page is fully loaded
         useEffect(() => {
-            const res = axios.get('https://simplug.herokuapp.com/measurements/getB/:100')
+            const res = axios.get('https://simplug.herokuapp.com/measurements/getB/:720')
             .then((result) => { 
             measurements = result.data.exportMeas;
             setPayload(measurements);
@@ -27,21 +27,14 @@ export default function LineChart () {
 
 
     if (payload[1] != undefined){
-        const labels = [payload[0].timestamp, 
-        payload[1].timestamp, 
-        payload[2].timestamp, 
-        payload[3].timestamp, 
-        payload[4].timestamp, 
-        payload[5].timestamp,
-        payload[6].timestamp,
-        payload[7].timestamp,
-        payload[8].timestamp,
-        payload[9].timestamp,
-        payload[10].timestamp,
-        payload[11].timestamp,
-        payload[12].timestamp,
-        payload[13].timestamp,
-        payload[14].timestamp];
+        const labels=[];
+        count = 0;
+
+        for(let i=14; i>0; i--) {
+            labels[count] = (payload[i * 50].timestamp.substr(0,10) + " " + payload[i * 50].timestamp.substr(11,8))
+            count++;
+        }
+
 
         const data = {
             labels: labels,
@@ -50,36 +43,38 @@ export default function LineChart () {
             label: "Power (W) ",
             backgroundColor: "rgb(0, 0, 0)",
             borderColor: "rgb(255, 255, 255)",
-            data: [payload[0].power, 
-                    payload[1].power, 
-                    payload[2].power, 
-                    payload[3].power, 
-                    payload[4].power, 
-                    payload[5].power,
-                    payload[6].power,
-                    payload[7].power,
-                    payload[8].power,
-                    payload[9].power,
-                    payload[10].power,
-                    payload[11].power,
-                    payload[12].power,
-                    payload[13].power,
-                    payload[14].power],
+            data: [
+                    payload[14* 50].power, 
+                    payload[13* 50].power, 
+                    payload[12* 50].power, 
+                    payload[11* 50].power, 
+                    payload[10* 50].power, 
+                    payload[9* 50].power,
+                    payload[8* 50].power,
+                    payload[7* 50].power,
+                    payload[6* 50].power,
+                    payload[5* 50].power,
+                    payload[4* 50].power,
+                    payload[3* 50].power,
+                    payload[2* 50].power,
+                    payload[1* 50].power,
+                    payload[0* 50].power],
                 },
             ],
             options: {
                 scales: {
-                    y: {
+                    y: [{
                         ticks: {
+                            beginAtZero: true
                         }
-                    }
+                    }]
                 }
             }
         };
     
         return (
             <div>
-            <Line data={data} />
+            <Line data={data}/>
             </div>
         );
         }
