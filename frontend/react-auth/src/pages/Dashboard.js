@@ -5,10 +5,8 @@ import { Form, Button, Container } from "react-bootstrap";
 import { Col, Row } from "react-bootstrap";
 import axios from "axios";
 import '../css/dashboard.css';
+import LineChart from "./LineChart";
 import Chart from './Chart';
-//import {  } from '../../../routes/measurements'
-
-
 
 
 export default function Dashboard() {
@@ -26,7 +24,7 @@ export default function Dashboard() {
 
   //API Call for 1Day of Measurements
   //Assign Value to "measurements" Array and add parameter 
-  const res = axios.get('https://simplug.herokuapp.com/measurements/getA/:2880')
+  const res = axios.get('https://simplug.herokuapp.com/measurements/getA/:2160')
     .then((result) => { 
       measurements = result.data.exportMeas;
       count = measurements.length - 1;
@@ -73,10 +71,6 @@ export default function Dashboard() {
 
   };
 
-
-
-
-
   const nextPage  = (e) => {
     // redirect to devices web-page
     function redirectDevices() {
@@ -117,7 +111,7 @@ return (
           type="submit"
           onClick={(e) => nextPage(e)}
         >
-          Living Room 1
+          Living Room 2
         </Button>
       </div>
     </Col>
@@ -130,18 +124,7 @@ return (
           type="submit"
           onClick={(e) => nextPage(e)}
         >
-          Living Room 2
-        </Button>
-      </div>
-
-      {/* submit button */}
-      <div className="buttonD">
-        <Button
-          variant="primary"
-          type="submit"
-          onClick={(e) => nextPage(e)}
-        >
-          Master Bedroom
+          Living Room 1
         </Button>
       </div>
     </Col>
@@ -149,7 +132,7 @@ return (
 
 
   {/* submit button */}
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br />
   <div className="buttonD">
     <Button
       variant="primary"
@@ -160,10 +143,15 @@ return (
     </Button>
   </div>
 
+  <p className = "Graph">
+      <LineChart></LineChart>    
+  </p>
 
+  {/*
   <div className="charts">
     <Chart height={'600px'} width={'1000px'} filter={time} chartId={'62cb876f-ebb5-4cd8-8b90-32e9b590945c'}/>
   </div>
+  */}
   </>
 
 )}

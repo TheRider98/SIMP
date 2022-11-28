@@ -1,25 +1,17 @@
 import React, { useEffect, useState } from "react";
-//import { Link, redirect } from 'react-router-dom';
-//import ReactDOM from 'react-dom'
-//import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import axios from "axios";
 import '../css/dashboard.css';
 import '../css/device.css';
 import $ from "jquery";
 import LineChart from "./LineChart";
-import { Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 export default function Device() {
 
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
-  const [check, setChange] = useState(false);
   const [measArr, setMeasArr] = useState([]);
   const [kwArr, setkwArr] = useState([]);
   const [nano, setNano] = useState([]);
-  const [time, setTime] = useState({});
   
   let measurements = [];
   let a = 0, cost = 0, wattage = 0, count = 0;
@@ -212,8 +204,6 @@ export default function Device() {
     <p className = "Graph">
       <LineChart></LineChart>    
     </p>
-
-
 
     </>
   );

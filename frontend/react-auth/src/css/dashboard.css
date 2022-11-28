@@ -61,6 +61,16 @@ html {
   justify-content: flex-start !important;
 }
 
+.Graph {
+  display: inline-block;
+  color: white;
+  position: fixed;
+  font-size: 5em;
+  font-family: Arial, sans-serif;
+  right: 1%;
+  top: 15%;
+}
+
 .title {
     text-align: center;
   }
@@ -78,6 +88,7 @@ html {
 
 .charts {
   text-align: center;
+  color:rgb(255, 255, 255)
 }
 
 .chart {
@@ -86,6 +97,7 @@ html {
   margin-right: 1%;
   right: 0;
   top: 0;
+  color:rgb(255, 255, 255);
   background-color: blue;
 }
 

@@ -79,9 +79,12 @@ html {
   border: solid black 1px;
 }
 
-
 canvas {
   width: 1000px;
+}
+
+.Chart {
+  color: white;
 }
 
 .elem {
